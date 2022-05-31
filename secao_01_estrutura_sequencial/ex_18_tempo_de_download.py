@@ -2,7 +2,8 @@
 Exercício 18 da seção de estrutura sequencial da Python Brasil:
 https://wiki.python.org.br/EstruturaSequencial
 
-Faça um programa que peça o tamanho de um arquivo para download (em MB) e a velocidade de um link de Internet (em Mbps),
+Faça um programa que peça o tamanho de um arquivo para download (em MB)
+ e a velocidade de um link de Internet (em Mbps),
 calcule e informe o tempo aproximado de download do arquivo usando este link (em minutos).
 Arredonde o tempo em minutos
 
@@ -21,3 +22,10 @@ Arredonde o tempo em minutos
 
 def calcular_tempo_de_download():
     """Escreva aqui em baixo a sua solução"""
+    tamanho_arq = float(input ('Digite o valor do arquivo em MB: '))
+    velocidade = float(input ('Digite a velocidade do link em Mbps '))
+    conv= velocidade * 0.125
+    tempo = tamanho_arq / conv
+    minuto = tempo / 60
+    print(f'O tempo aproximado do Download é: {round(minuto)} minuto(s)')
+
