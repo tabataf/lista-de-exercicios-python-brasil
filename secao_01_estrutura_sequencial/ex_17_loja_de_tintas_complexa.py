@@ -3,7 +3,7 @@ Exercício 17 da seção de estrutura sequencial da Python Brasil:
 https://wiki.python.org.br/EstruturaSequencial
 
 Faça um Programa para uma loja de tintas. O programa deverá pedir o tamanho em metros
- quadrados da área a ser pintada.
+ quadrados da área a ser pintada. --
 Considere que a cobertura da tinta é de 1 litro para cada 6 metros quadrados e
 que a tinta é vendida em latas de 18 litros, que custam R$ 80,00 ou em galões de 3,6 litros,
  que custam R$ 25,00.
@@ -32,33 +32,51 @@ latas cheias.
 """
 
 
+
+import math
+
+
 def calcular_latas_e_preco_de_tinta():
     """Escreva aqui em baixo a sua solução"""
 
-    import math
-    area_pintura = float(input ('Digite o valor da área em metros quadrados a ser pintada: '))
-    area_com_folga = area_pintura * 1.1
-    litros_por_metro= 6
-    litros_pintura= area_com_folga / litros_por_metro
-    litros_por_lata= 18
-    numero_latas= math.ceil (litros_pintura / litros_por_lata)
-    valor_com_apenas_latas = numero_latas * 80
-    sobra1= area_pintura - litros_por_metro
-    print (f'Você deve comprar: {litros_pintura} litros de tinta.')
-    print (f'Você deve comprar: {numero_latas} lata(s) de 18 litros a um custo de {valor_com_apenas_latas} Vão sobrar {sobra1} litro(s) de tinta.')
-    
-    litros_por_galao= 3.6
-    numero_galoes= math.ceil (litros_pintura / litros_por_galao)
-    valor_com_apenas_galoes = numero_galoes * 25
-    print (f'Você deve comprar: {numero_galoes} galãoes de 3.6 litros a um custo de {valor_com_apenas_galoes} Vão sobrar {sobra1} litro(s) de tinta.')
-    
-    numero_latas= math.floor (litros_pintura / litros_por_lata)
-    valor_de_latas = numero_latas * 80
-    litros_faltantes = litros_pintura % litros_por_lata
-    numero_galoes= math.ceil (litros_faltantes / litros_por_galao)
-    valor_com_galoes = numero_galoes * 25
+    area_pintura = int(input('Digite o valor da área em metros quadrados a ser pintada: '))
+    cobertura_tinta= 6
+    qtd_litros= math.ceil((area_pintura*1.1)/cobertura_tinta)
 
-    valor_total = valor_latas + valor_com_galoes
-    print (litros_pintura % litros_por_lata)
-print (f'Você deve comprar: {numero_latas} galãoes de 3.6 litros a um custo de {valor_com_apenas_galoes} Vão sobrar {valor_total1} litro(s) de tinta')
+    #latas
+    lata_litro= 18
+    lata_valor= 80
+    compra_lata= math.ceil(qtd_litros/ lata_litro)
+    valor_total_lata= (compra_lata*lata_valor)
+    sobra_lata= (compra_lata *lata_litro)-qtd_litros
+
+    #galoes
+    galao_litro= 3.6
+    galao_valor= 25
+    compra_galao=math.ceil(qtd_litros/galao_litro)
+    valor_total_galao=(compra_galao*galao_valor)
+    sobra_galao= (compra_galao*galao_litro)-qtd_litros
+
+    #menor custo tinta lata
+    compra_lata_otimizada= math.floor(qtd_litros/lata_litro)
+    valor_lata_otimizado= compra_lata_otimizada*lata_valor
+    sobra_tinta_lata= qtd_litros/(valor_lata_otimizado*lata_litro)
+
+    #menor custo tinta galao
+    compra_galao_otimizada= math.ceil(sobra_tinta_lata/galao_litro)
+    valor_galao_otimizado= compra_galao_otimizada*galao_valor
+    sobra_tinta_galao=(valor_galao_otimizado*galao_litro) - sobra_tinta_lata
+
+    #valor geral
+    valor_total_geral= valor_galao_otimizado + valor_lata_otimizado
+
+    teste= (qtd_litros-(compra_lata_otimizada*lata_litro)-(compra_galao_otimizada*galao_litro))
+    teste2= teste * (-1)
+    
+    print(f'Você deve comprar {qtd_litros:.0f} litros de tinta.')
+    print(f'Você pode comprar {compra_lata} lata(s) de 18 litros a um custo de R$ {valor_total_lata}. Vão sobrar {sobra_lata:.1f} litro(s) de tinta.')
+    print(f'Você pode comprar {compra_galao} lata(s) de 3.6 litros a um custo de R$ {valor_total_galao}. Vão sobrar {sobra_galao:.1f} litro(s) de tinta.')
+    print(f'Para menor custo, você pode comprar {compra_lata_otimizada} lata(s) de 18 litros e {compra_galao_otimizada} galão(ões) de 3.6 litros a um custo de R$ {valor_total_geral}. Vão sobrar {teste2} litro(s) de tinta.')
+
+    
 
