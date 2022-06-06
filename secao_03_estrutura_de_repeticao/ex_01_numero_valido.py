@@ -24,6 +24,7 @@ até que o usuário informe um valor válido.
     >>> ex_01_numero_valido.input = lambda k: entradas.pop()
     >>> ex_01_numero_valido.obter_numero_valido()
     Número inválido: 11
+    Número inválido: -1
     Número inválido: a
     10
 
