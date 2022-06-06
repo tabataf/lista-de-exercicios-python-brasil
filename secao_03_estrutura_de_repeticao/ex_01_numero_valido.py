@@ -24,13 +24,23 @@ até que o usuário informe um valor válido.
     >>> ex_01_numero_valido.input = lambda k: entradas.pop()
     >>> ex_01_numero_valido.obter_numero_valido()
     Número inválido: 11
-    Número inválido: -1
     Número inválido: a
     10
 
 
 """
 
-
 def obter_numero_valido():
     """Escreva aqui em baixo a sua solução"""
+    
+    while True:
+        notas= input(f'Digite uma nota de 0 á 10: ')
+        if notas.isdigit()==True:
+            notas = int(notas)
+            if notas >10 or notas <0: 
+                print(f'Número inválido: {notas}')
+            else:
+                print(notas)
+                break
+        else:
+            print(f'Número inválido: {notas}') 
