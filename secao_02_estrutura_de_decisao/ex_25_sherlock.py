@@ -31,5 +31,31 @@ Caso contrário, ele será classificado como "Inocente".
 """
 
 
+from telnetlib import NAOCRD
+import oauthlib
+
+
 def investivar(telefonou: str, estava_no_local: str, mora_perto: str, devia: str, trabalhou: str, ):
     """Escreva aqui em baixo a sua solução"""
+
+    if telefonou == 'Sim':
+        if estava_no_local == 'Sim':
+            if mora_perto == 'Sim':
+                if devia == 'Sim':
+                    if trabalhou == 'Sim':
+                        print("'Assassino'")
+    if telefonou == 'Sim':
+        if estava_no_local == 'Sim':
+            if mora_perto == 'Sim':
+                if devia == 'Sim' or 'Não':
+                    if trabalhou == 'Não':
+                        print("'Cúmplice'")
+
+    if telefonou == 'Sim':
+        if estava_no_local == 'Sim':
+            if mora_perto == 'Não':
+                        print("'Suspeito'")
+    if telefonou == 'Sim' and estava_no_local !='Sim':
+        print("'Inocente'")
+    if telefonou =='Não':
+        print("'Inocente'")

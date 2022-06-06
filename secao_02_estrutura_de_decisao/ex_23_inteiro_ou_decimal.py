@@ -20,5 +20,12 @@ arredondamento.
 """
 
 
+from gzip import READ
+
+
 def decidir_se_eh_inteiro_ou_decimal(valor: str) -> str:
     """Escreva aqui em baixo a sua solução"""
+    import math
+    print("'", end="")
+    print(f'{"Inteiro" if math.floor(float(valor)) == float(valor) else "Decimal"}', end="")
+    print("'")

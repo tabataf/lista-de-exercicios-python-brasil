@@ -40,4 +40,58 @@ Mostrar valores monetários com duas casas decimais.
 
 
 def calcular_aumento(salario: float):
-    """Escreva aqui em baixo a sua solução"""
+  """Escreva aqui em baixo a sua solução"""
+  
+  """#salario atual
+  if salario <=280:
+    print
+  elif salario >280 and salario <=700:
+    print
+  elif salario >700 and salario <=1500:
+    print
+  elif salario >1500:
+  
+   print(f'Salário atual: {salario:.2f}')
+
+   #salario com aumento
+  salario_baixo= salario * 0.2
+  salario_medio= salario * 0.15
+  salario_alto= salario * 0.1
+  salario_muito_alto= salario * 0.05
+
+
+  #apenas aumento
+  if salario_baixo :
+    print(f'Aumento porcentual: 20%')
+    print(f'Valor do aumento: {salario_baixo}')
+
+  elif salario_medio:
+    print(f'Aumento porcentual: 15%')
+    print(f'Valor do aumento: {salario_medio}')
+
+  elif salario_medio:
+    print(f'Aumento porcentual: 10%')
+    print(f'Valor do aumento: {salario_alto}')
+
+  else:
+    print(f'Aumento porcentual: 5%')
+    print(f'Valor do aumento: {salario_muito_alto}')"""
+
+
+
+  if salario <=280:
+    aumento_percentual= 20
+  elif 280 < salario <=700: 
+    aumento_percentual= 15
+  elif 700 < salario <=1500:
+    aumento_percentual= 10
+  else:
+    aumento_percentual= 5
+
+  valor_aumento= salario * (aumento_percentual/100)
+  novo_salario= salario + valor_aumento
+
+  print(f'Salário atual: R$ {salario:.2f}')
+  print(f'Aumento porcentual: {aumento_percentual}%')
+  print(f'Valor do aumento: R$ {valor_aumento:.2f}')
+  print(f'Novo salário: R$ {novo_salario:.2f}')
