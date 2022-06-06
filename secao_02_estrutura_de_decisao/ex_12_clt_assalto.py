@@ -55,9 +55,9 @@ def calcular_salario_liquido(valor_hora: float, horas_trabalhadas: int):
     """Escreva aqui em baixo a sua solução"""
 
     salario= valor_hora * horas_trabalhadas
-    if salario <=980:
+    if salario <=900:
       desconto_percentual= 0
-    elif 980 < salario <=1500: 
+    elif 900 < salario <=1500: 
       desconto_percentual= 0.05
     elif 1500 < salario <=2500:
       desconto_percentual= 0.1
