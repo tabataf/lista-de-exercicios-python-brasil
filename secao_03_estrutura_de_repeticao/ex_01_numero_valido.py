@@ -34,7 +34,7 @@ def obter_numero_valido():
     """Escreva aqui em baixo a sua solução"""
     
     while True:
-        notas= input(f'Digite uma nota de 0 á 10: ')
+        notas= input(f'Digite uma nota de 0 a 10: ')
         if notas.isdigit()==True:
             notas = int(notas)
             if notas >10 or notas <0: 
