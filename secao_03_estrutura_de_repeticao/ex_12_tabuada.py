@@ -118,9 +118,13 @@ Desenvolva um gerador de tabuada, capaz de gerar a tabuada de qualquer número i
     10 X 8 = 80
     10 X 9 = 90
     10 X 10 = 100
-
 """
-
 
 def gerar_tabuada(n: int) -> str:
     """Escreva aqui em baixo a sua solução"""
+
+    if n not in range(1,11):
+        print('Somente pode ser gerada tabuada de 1 a 10')
+    else:
+        for t in range(1,11):
+             print (f'{n} X {t} = {n*t}')

@@ -25,7 +25,8 @@ def positivo_ou_negativo(n):
         print("'positivo'")
 
     elif n==0:
-        print("'não nem positivo nem negativo'")
+        print("'não tem positivo nem negativo'")
+
 
     else:
         print("'negativo'")

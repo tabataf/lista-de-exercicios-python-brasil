@@ -15,6 +15,18 @@ Também mostre a soma dos números da sequência.
 
 """
 
-
 def calcular_numeros_no_intervalo_e_somar(inicio: int, fim: int) -> str:
     """Escreva aqui em baixo a sua solução"""
+    if inicio <fim:
+        print(f"'Sequência: ", end="")
+        for i in range(inicio, fim):
+            if i!= fim-1:
+                print(f'{i}', end=", ")
+            else:
+                print(f'{i}', end=".")
+                print(f" Soma: {sum(range(inicio,fim))}'")
+    else:
+        print("'Sequência: vazia. Soma: 0'")
+
+
+    

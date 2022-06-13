@@ -45,3 +45,4 @@ def obter_numero_valido():
                 break
         else:
             print(f'Número inválido: {notas}') 
+
