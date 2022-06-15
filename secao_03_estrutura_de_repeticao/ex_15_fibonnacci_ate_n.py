@@ -21,7 +21,20 @@ n−ésimo termo.
     '1, 1, 2, 3, 5, 8, 13'
 
 """
-
-
 def calcular_serie_de_fibonacci(n: int) -> str:
     """Escreva aqui em baixo a sua solução"""
+
+    fibonacci = [1, 1]
+    i=0
+    if n==1:
+        print("'1'")
+    else:
+        while i<(n-2):
+            fibonacci.append(fibonacci[-2] + fibonacci[-1])
+            i+=1
+        print("'" + ', '.join(map(str, fibonacci)) + "'")
+
+
+    
+
+    

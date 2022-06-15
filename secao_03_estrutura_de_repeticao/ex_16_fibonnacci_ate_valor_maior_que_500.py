@@ -12,3 +12,9 @@ valor seja maior que 500.
 
 def calcular_serie_de_fibonacci_ate_valor_ser_maior_que_500() -> str:
     """Escreva aqui em baixo a sua solução"""
+    fibonacci = [0, 1]
+    t=0
+    while fibonacci[-1] < 500:
+        fibonacci.append(fibonacci[-2] + fibonacci[-1])
+        t+=1
+    print("'" + ', '.join(map(str, fibonacci)) + "'")

@@ -43,3 +43,29 @@ from typing import Tuple
 
 def calcular_primos_e_divisoes(n: int) -> Tuple[str, int]:
     """Escreva aqui em baixo a sua solução"""
+    if n == 1 or n == 2:
+        print(
+            f"{n} é primo e foram executadas 0 divisões para descobrir isso"
+        )
+    elif n % 2 == 0:
+        print(
+            f"{n} não é primo e foi executada uma divisão para descobrir isso"
+        )
+    else:
+        contador = 1
+        primo = True
+        for i in range(3, n, 2):
+            contador += 1
+            if n % i == 0:
+                primo = False
+                break
+        if primo:
+            print(
+                f"{n} é primo e foram executadas"
+                f" {contador} divisões para descobrir isso"
+            )
+        else:
+            print(
+                f"{n} não é primo e foram executadas"
+                f" {contador} divisões para descobrir isso"
+                )
