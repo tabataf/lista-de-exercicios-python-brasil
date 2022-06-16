@@ -56,3 +56,6 @@ da média das alturas e dos pesos dos clientes
 
 def rodar_senso():
     """Escreva aqui em baixo a sua solução"""
+    nome = int(input('Digite seu nome:'))
+    altura = int(input('Digite a sua altura:'))
+    peso = int(input('Digite o seu peso:'))
